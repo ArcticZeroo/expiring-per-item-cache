@@ -42,6 +42,7 @@ class CachedObject {
 
             this.updated = Date.now();
             this.value = res;
+            return res;
         }
     }
 }
