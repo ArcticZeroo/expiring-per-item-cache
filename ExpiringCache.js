@@ -21,7 +21,7 @@ class CachedObject {
      * @returns {boolean}
      */
     isValid () {
-        return !!this.value && Date.now() - this.updated >= this.expireTime;
+        return !!this.value && Date.now() - this.updated <= this.expireTime;
     }
 
     /**
