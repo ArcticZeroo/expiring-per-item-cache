@@ -1,8 +1,8 @@
 import Collection from '@arcticzeroo/collection';
 
-interface ICachedObjectProps {
+interface ICachedObjectProps<T> {
     expireTime?: number,
-    fetch: () => Promise<any>
+    fetch: () => Promise<T>
 }
 
 /**
@@ -19,7 +19,7 @@ class CachedObject<T = any> {
      * @param {number} expireTime - Time in ms before this object expires.
      * @param {function} fetch - a function to call when the value needs updating (should probably be async)
      */
-    constructor({ expireTime = 1000 * 60 * 60 * 12, fetch = async () => null } : ICachedObjectProps) {
+    constructor({ expireTime = 1000 * 60 * 60 * 12, fetch = async () => null } : ICachedObjectProps<T>) {
         this.expireTime = expireTime;
         this.fetch = fetch;
         this.updated = 0;
@@ -71,7 +71,7 @@ class ExpiringCache<TKey, TValue> extends Collection<TKey, CachedObject<TValue>>
      * @param {string} key - The name of the key.
      * @param {object} opts - See {@link CachedObject.constructor}
      */
-    add(key: TKey, opts: ICachedObjectProps) {
+    add(key: TKey, opts: ICachedObjectProps<TValue>) {
         this.set(key, new CachedObject(opts));
     }
 
