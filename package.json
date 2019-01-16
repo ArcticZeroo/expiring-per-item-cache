@@ -2,9 +2,10 @@
   "name": "expiring-per-item-cache",
   "version": "1.0.0",
   "description": "Allows use of a key-value cache where each item is separately expiring",
-  "main": "ExpiringCache.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,6 @@
   },
   "homepage": "https://github.com/Arcticzeroo/expiring-per-item-cache#readme",
   "dependencies": {
-    "@arcticzeroo/collection": "^1.0.2"
+    "@arcticzeroo/collection": "^1.1.0"
   }
 }
