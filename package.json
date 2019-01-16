@@ -1,6 +1,6 @@
 {
   "name": "expiring-per-item-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows use of a key-value cache where each item is separately expiring",
   "main": "dist/index.js",
   "scripts": {
